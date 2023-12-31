@@ -1,8 +1,7 @@
 name: Push
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
 
@@ -29,3 +28,9 @@ jobs:
       run: |
         go install ./cmd/gokr-rebuild-kernel
         gokr-rebuild-kernel
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: vmlinuz
+        path: vmlinuz
