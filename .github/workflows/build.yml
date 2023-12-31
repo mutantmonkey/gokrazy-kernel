@@ -1,4 +1,4 @@
-name: Push
+name: Build kernel
 
 on:
   workflow_dispatch:
